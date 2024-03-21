@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="d-flex flex-column mt-3 mb-3 justify-content-center align-items-center">
+        <h1>Profile</h1>
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <th scope="row">Id</th>
+                <td>{{rest.restaurantId}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Name</th>
+                <td>{{rest.name}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Address</th>
+                <td>{{rest.address}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Contact</th>
+                <td>{{rest.contact}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="mb-3 d-flex justify-content-center">
+            <a class="btn btn-primary" href="/restaurant/edit" type="submit">EDIT</a>
+        </div>
+    </div>
+</div>

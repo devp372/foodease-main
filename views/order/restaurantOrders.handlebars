@@ -1,0 +1,155 @@
+<div class="container">
+    <ul class="nav nav-pills mt-3 mb-3">
+        {{#if isAll}}
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/order/restaurantOrders/all">All</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/pending">Pending</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/accepted">Accepted</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/ready">Ready</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/delivered">Delivered</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " aria-current="page" href="/order/restaurantOrders/cancel">Cancel</a>
+            </li>
+        {{/if}}
+        {{#if isPending}}
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/all">All</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/order/restaurantOrders/pending">Pending</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/accepted">Accepted</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/ready">Ready</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/delivered">Delivered</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " aria-current="page" href="/order/restaurantOrders/cancel">Cancel</a>
+            </li>
+        {{/if}}
+        {{#if isAccepted}}
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/all">All</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/pending">Pending</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/order/restaurantOrders/accepted">Accepted</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/ready">Ready</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/delivered">Delivered</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " aria-current="page" href="/order/restaurantOrders/cancel">Cancel</a>
+            </li>
+        {{/if}}
+        {{#if isReady}}
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/all">All</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/pending">Pending</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/accepted">Accepted</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link active" aria-current="page" href="/order/restaurantOrders/ready">Ready</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/delivered">Delivered</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " aria-current="page" href="/order/restaurantOrders/cancel">Cancel</a>
+            </li>
+        {{/if}}
+        {{#if isDelivered}}
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/all">All</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/pending">Pending</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/accepted">Accepted</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/ready">Ready</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link active" aria-current="page" href="/order/restaurantOrders/delivered">Delivered</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " aria-current="page" href="/order/restaurantOrders/cancel">Cancel</a>
+            </li>
+        {{/if}}
+        {{#if isCancel}}
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/all">All</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/pending">Pending</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/accepted">Accepted</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/ready">Ready</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" aria-current="page" href="/order/restaurantOrders/delivered">Delivered</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link active" aria-current="page" href="/order/restaurantOrders/cancel">Cancel</a>
+            </li>
+        {{/if}}
+    </ul>
+
+    {{#if orders}}
+        <table class="table">
+            <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Total items</th>
+                <th>Total Amount</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Go to order</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each orders}}
+                <tr>
+                    <td>{{this._user}}</td>
+                    <td>{{this.totalItem}}</td>
+                    <td>{{this.price}}</td>
+                    <td>{{this._time}}</td>
+                    <td>{{this.status}}</td>
+                    <td><a href="/order/viewRestaurantOrder/{{this._id}}">View Order</a></td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <div class="alert text-center alert-warning mb-3 mt-3">
+            No Order found
+        </div>
+    {{/if}}
+</div>

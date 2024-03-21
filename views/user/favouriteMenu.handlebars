@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 class="mt-3 text-center">Favourite Menus</h1>
+    {{#if items}}
+        <div class="row">
+            {{#each items}}
+                <div class="col-lg-4 mt-2">
+                    <div class="card">
+                        <img src="{{this.item.img}}" class="card-img-top" alt="item image">
+                        <div class="card-body">
+                            <h2 style="font-size: 20px" class="card-title">{{this.item.description}}</h2>
+                            <p class="card-text">Price : {{this.item.price}}$</p>
+                        </div>
+                        <div class="card-body">
+                            <a href="/user/menuList/{{this.restId}}" class="card-link">Order Here</a>
+                            <a href="/user/removeFavouriteItem/{{this.item._id}}" class="card-link removeFavourite">
+                                Remove From Favourite
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div class="alert text-center alert-warning mb-3 mt-3">
+            No menu item found as favourite
+        </div>
+    {{/if}}
+</div>
+<script src="/public/favouriteHandler.js"></script>

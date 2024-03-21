@@ -1,0 +1,56 @@
+<div class="container">
+    {{#if fav}}
+        <h1 class="text-center">Favourite Restaurant</h1>
+    {{/if}}
+    {{#if restaurants}}
+        <div class="row mt-3">
+            {{#each restaurants}}
+                <div class="col-md-3">
+                    <div class="card mb-3">
+                        <div class="card-header"><strong>{{this.name}}</strong></div>
+                        <div class="card-body">
+                            <p class="card-text"><strong>Address</strong></p>
+                            <p class="card-text">{{this.address}}</p>
+                            <p class="card-text"><strong>Contact</strong></p>
+                            <p class="card-text"><a href="tel:{{this.contact}}">Contact : {{this.contact}}</a></p>
+                        </div>
+                        {{#if this.isOpen}}
+                            <div class="card-footer">
+                                <a href="/user/menuList/{{this.restaurantId}}" style="color: black">Order Here</a>
+                            </div>
+                        {{/if}}
+                        <div class="card-footer">
+                            <a href="/reviews/writeRestaurantReview/{{this.restaurantId}}" style="color: black">Give
+                                Review</a>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/reviews/restaurantReviews/{{this.restaurantId}}" style="color: black">View
+                                Review</a>
+                        </div>
+                        <div class="card-footer">
+                            {{#if this.isFav}}
+                                <a class="markFavourite" href="/user/removeFavouriteRestaurant/{{this.restaurantId}}"
+                                   style="color: black">Remove from
+                                    Favourite</a>
+                            {{else}}
+                                <a class="markFavourite" href="/user/markFavouriteRestaurant/{{this.restaurantId}}"
+                                   style="color: black">Mark
+                                    As
+                                    Favourite</a>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div class="alert text-center alert-warning mb-3 mt-3">
+            {{#if fav}}
+                No Restaurant found as favourite
+            {{else}}
+                No Restaurant found
+            {{/if}}
+        </div>
+    {{/if}}
+</div>
+<script src="/public/favouriteHandler.js"></script>

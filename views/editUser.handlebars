@@ -1,0 +1,39 @@
+<div class="container">
+    <h1 class="text-center">EDIT USER</h1>
+    <form action="/user/edit" class="mx-auto" method="post">
+        <div class="mb-3">
+            <label for="first_name" class="form-label">First Name</label>
+            <input value="{{user.first_name}}" type="text" id="first_name" name="first_name" placeholder="First Name"
+                   required class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input value="{{user.last_name}}" type="text" id="last_name" name="last_name" placeholder="Last Name"
+                   required class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input value="{{user.phone}}" type="text" id="phone" name="phone" placeholder="Phone" required
+                   class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input value="{{user.address}}" type="text" id="address" name="address" placeholder="Address" required
+                   class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="birth_date" class="form-label">Birthdate</label>
+            <input value="{{user.birth_date}}" type="date" id="birth_date" name="birth_date" placeholder="Birthdate"
+                   required class="form-control">
+        </div>
+        {{#if error}}
+            <div class="alert alert-danger mb-3" role="alert">
+                {{error}}
+            </div>
+        {{/if}}
+        <div class="mb-3 d-flex justify-content-center">
+            <button class="btn btn-primary" type="submit">UPDATE</button>
+        </div>
+    </form>
+</div>

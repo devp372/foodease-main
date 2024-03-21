@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 class="text-center mt-2">Edit Restaurant</h1>
+    <form action="/restaurant/edit" class="mx-auto mt-3" method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" placeholder="Name" required class="form-control"
+                   value="{{rest.name}}">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" id="address" name="address" placeholder="Address" required class="form-control"
+                   value="{{rest.address}}">
+        </div>
+        <div class="mb-3">
+            <label for="contact" class="form-label">Contact</label>
+            <input type="text" id="contact" name="contact" placeholder="Contact" required class="form-control"
+                   value="{{rest.contact}}">
+        </div>
+        {{#if error}}
+            <div class="alert alert-danger mb-3" role="alert">
+                {{error}}
+            </div>
+        {{/if}}
+        <div class="mb-3 d-flex justify-content-center">
+            <button class="btn btn-primary" type="submit">UPDATE</button>
+        </div>
+    </form>
+</div>

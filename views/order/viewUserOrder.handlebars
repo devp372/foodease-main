@@ -1,0 +1,48 @@
+<div class="container">
+    <form action="#">
+        <label for="orderId" hidden>Order Id</label>
+        <input type="hidden" id="orderId" value="{{order._id}}">
+    </form>
+    {{#if order}}
+        <h1 class="text-center mt-2">{{order._restaurant}}</h1>
+        <p>Order Id : {{order._id}}</p>
+        <p>Order Time : {{order._time}}</p>
+        <p>Status : {{order.status}}</p>
+        <table class="table table-bordered mt-3">
+            <thead>
+            <tr>
+                <th>Item name</th>
+                <th> Count</th>
+                <th>Total Amount</th>
+                <th>Review</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each order.menu}}
+                <tr>
+                    <td>{{this.item.name}}</td>
+                    <td>{{this.count}}</td>
+                    <td>{{this.totalPrice}}</td>
+                    <td><a href="/reviews/writeMenuItemReview/{{this.item._id}}">Give Review</a></td>
+                </tr>
+            {{/each}}
+            <tr>
+                <td colspan="2">Total</td>
+                <td>{{order.price}}</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+        {{#if order.isPending}}
+            <div class="flex-horizontal flex-center">
+                <a href="#" id="cancelOrder" class="btn btn-danger">Cancel Order</a>
+            </div>
+        {{/if}}
+    {{/if}}
+    {{#if error}}
+        <div class="alert alert-danger mb-3 mt-3 text-center">
+            {{error}}
+        </div>
+    {{/if}}
+</div>
+<script src="/public/orderStatus.js"></script>

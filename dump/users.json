@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "639c03e1586ca2bc9a72738c",
+    "first_name": "Jigar",
+    "last_name": "Chhatrala",
+    "email": "jigar.g.c@gmail.com",
+    "phone": "9408103800",
+    "address": "14 - western avenue",
+    "birth_date": "2022-12-09",
+    "password": "$2b$16$HJlpIMG.dfM28SNo/N1fCuhlY5Cy4DNNc3LcirbfWI47yTMxFTIFm",
+    "favMenus": [],
+    "favRestaurants": [
+      "taco"
+    ]
+  },
+  {
+    "_id": "639f683d32b7179bad3e8ae0",
+    "first_name": "Krutarth",
+    "last_name": "Bhavani",
+    "email": "kbhavani@gmail.com",
+    "phone": "5516554323",
+    "address": "Hoboken Stevens",
+    "birth_date": "2022-12-18",
+    "password": "$2b$16$NSj8rMyqzPPzssKQC1b7wO0Vgksgh4N2n8LGgaknvA6emfin.0q16",
+    "favMenus": [
+      "639f6bbc32b7179bad3e8ae4"
+    ],
+    "favRestaurants": []
+  }
+]

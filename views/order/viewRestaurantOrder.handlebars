@@ -1,0 +1,57 @@
+<div class="container">
+    <form action="#">
+        <label for="orderId" hidden>Order Id</label>
+        <input type="hidden" id="orderId" value="{{order._id}}">
+    </form>
+    {{#if order}}
+        <h1 class="text-center mt-2">{{order.restaurant}}</h1>
+        <h1 class="text-center mt-2">{{order._user}}</h1>
+        <p>Order Id : {{order._id}}</p>
+        <p>Order Time : {{order._time}}</p>
+        <p>Status : {{order.status}}</p>
+        <table class="table table-bordered mt-1">
+            <thead>
+            <tr>
+                <th>Item name</th>
+                <th> Count</th>
+                <th>Total Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each order.menu}}
+                <tr>
+                    <td>{{this.item.name}}</td>
+                    <td>{{this.count}}</td>
+                    <td>{{this.totalPrice}}</td>
+                </tr>
+            {{/each}}
+            <tr>
+                <td colspan="2">Total</td>
+                <td>{{order.price}}</td>
+            </tr>
+            </tbody>
+        </table>
+        {{#if order.isPending}}
+            <div class="flex-horizontal mb-1 flex-center">
+                <a href="#" id="cancelOrder" class="btn btn-danger">Cancel Order</a>
+                <a href="#" id="acceptOrder" class="btn btn-primary" style="margin-left: 10px">Accept Order</a>
+            </div>
+        {{/if}}
+        {{#if order.isAccepted}}
+            <div class="flex-horizontal mb-1 flex-center">
+                <a href="#" id="readyOrder" class="btn btn-primary">Ready</a>
+            </div>
+        {{/if}}
+        {{#if order.isReady}}
+            <div class="flex-horizontal mb-1 flex-center">
+                <a href="#" id="deliveredOrder" class="btn btn-primary">Delivered</a>
+            </div>
+        {{/if}}
+    {{/if}}
+    {{#if error}}
+        <div class="alert alert-danger mb-3 mt-3 text-center">
+            {{error}}
+        </div>
+    {{/if}}
+</div>
+<script src="/public/orderStatus.js"></script>

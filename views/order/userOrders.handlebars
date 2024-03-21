@@ -1,0 +1,26 @@
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Restaurant Name</th>
+            <th>Total items</th>
+            <th>Total Amount</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Go to order</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each orders}}
+            <tr>
+                <td>{{this._restaurant}}</td>
+                <td>{{this.totalItem}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this._time}}</td>
+                <td>{{this.status}}</td>
+                <td><a href="/order/viewUserOrder/{{this._id}}">View Order</a></td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>

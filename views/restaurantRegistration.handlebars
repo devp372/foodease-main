@@ -1,0 +1,53 @@
+<div class="container">
+    <h1 class="text-center">Restaurant Registration</h1>
+    <form action="/register/restaurantRegistration" class="mx-auto" method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" placeholder="Name" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="id" class="form-label">Restaurant Id</label>
+            <input type="text" id="id" name="id" placeholder="Restaurant Id" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" id="address" name="address" placeholder="Address" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="contact" class="form-label">Contact</label>
+            <input type="text" id="contact" name="contact" placeholder="Contact" required class="form-control">
+        </div>
+        <!--        <div class="mb-3">-->
+        <!--            <label for="openTime" class="form-label">Open Time</label>-->
+        <!--            <input type="time" id="openTime" name="openTime" placeholder="Open Time" required class="form-control">-->
+        <!--        </div>-->
+        <!--        <div class="mb-3">-->
+        <!--            <label for="closeTime" class="form-label">Close Time</label>-->
+        <!--            <input type="time" id="closeTime" name="closeTime" placeholder="Close Time" required class="form-control">-->
+        <!--        </div>-->
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password" required class="form-control">
+        </div>
+
+        {{#if error}}
+            <div class="alert alert-danger mb-3" role="alert">
+                {{error}}
+            </div>
+        {{/if}}
+        {{#if success}}
+            <div class="alert alert-success mb-3" role="alert">
+                Successfully Registered
+            </div>
+        {{/if}}
+
+        <div class="mb-3 d-flex justify-content-center">
+            <button class="btn btn-primary" type="submit">REGISTER</button>
+        </div>
+
+        <div class="mb-3 d-flex justify-content-center">
+            <a href="/login/restaurant" class="link-primary">Already Register Please Log in Here</a>
+        </div>
+
+    </form>
+</div>

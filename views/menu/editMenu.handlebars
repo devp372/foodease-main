@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 class="text-center mt-3">Edit Menu Item</h1>
+    <form action="/menu/addMenu" id="editMenuForm" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="menuId" class="form-label" hidden>Menu Id</label>
+            <input class="form-control" type="hidden" value="{{menu._id}}" name="menuId" id="menuId">
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Menu Name</label>
+            <input required class="form-control" type="text" value="{{menu.name}}" name="name" id="name" placeholder="Menu Name">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input required class="form-control" type="text" value="{{menu.description}}" name="description" id="description"
+                   placeholder="Description">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input required class="form-control" type="text" name="price" value="{{menu.price}}" id="price" placeholder="Price">
+        </div>
+        <div class="mb-3">
+            <label for="img" class="form-label">Menu Item Img</label>
+            <input class="form-control" type="file" id="img" name="img" accept="image/*">
+        </div>
+        <div class="mb-3 d-flex justify-content-center">
+            <button class="btn btn-primary" type="submit">UPDATE</button>
+        </div>
+    </form>
+    <div class="mb-3 d-flex justify-content-center">
+        <button class="btn btn-danger" id="deleteMenu" type="submit">DELETE</button>
+    </div>
+</div>
+<script src="/public/editMenu.js"></script>
